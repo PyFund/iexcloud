@@ -1,5 +1,12 @@
-
+# IDE files
 .idea
+
+# Compilation cache files
 iexdownload.egg-info
 dist
 versioneer.pyc
+__pycache__
+build
+
+# Environment variables for development use
+.env
