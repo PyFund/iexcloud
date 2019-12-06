@@ -1,0 +1,2 @@
+include versioneer.py
+include iexdownload/_version.py
