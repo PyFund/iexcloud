@@ -9,7 +9,7 @@ The source code is currently hosted on GitHub at:
 https://github.com/shawnlinxl/iexdownload
 
 Binary installers for the latest released version are available at the [Python
-package index](https://pypi.org/project/iexfinance) and on conda.
+package index](https://pypi.org/project/iexdownload).
 
 ```sh
 pip install iexdownload
