@@ -8,6 +8,7 @@ versioneer = ">=0.18"
 twine = "*"
 
 [packages]
+requests = ">=2.22.0"
 
 [requires]
 python_version = "3.7"
