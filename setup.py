@@ -1,5 +1,4 @@
 from setuptools import setup
-from setuptools import find_packages
 
 import versioneer
 
@@ -34,7 +33,7 @@ if __name__ == "__main__":
         classifiers=classifiers,
         install_requires=install_reqs,
         url=URL,
-        packages=find_packages(),
+        packages=['iexdownload'],
         version=versioneer.get_version(),
         cmdclass=versioneer.get_cmdclass(),
     )
