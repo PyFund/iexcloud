@@ -33,7 +33,7 @@ need to be configured:
 
 #### Setting your environment variables
 
-1. OSX
+1. OS X
 
    * Open Terminal
    * Run `touch ~/.bash_profile; open ~/.bash_profile`
