@@ -1,2 +1,5 @@
 
 .idea
+iexdownload.egg-info
+dist
+versioneer.pyc
