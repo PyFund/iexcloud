@@ -1,20 +1,19 @@
-# iexdownload
+# iexcloud
 
-iexdownload is an utility tool built for downloading and archiving data from
-IEX Cloud effortlessly.
+iexcloud is the python wrapper for [IEX Cloud](https://iexcloud.io) API.
 
 ## Installation 
 
 ### Getting the package
 
 The source code is currently hosted on GitHub at: 
-https://github.com/shawnlinxl/iexdownload
+https://github.com/shawnlinxl/iexcloud
 
 Binary installers for the latest released version are available at the [Python
-package index](https://pypi.org/project/iexdownload).
+package index](https://pypi.org/project/iexcloud).
 
 ```sh
-pip install iexdownload
+pip install iexcloud
 ```
 
 ### Dependencies
@@ -22,7 +21,7 @@ pip install iexdownload
 The package should be used with conjunction with a MySQL database and an IEX
 Cloud. To learn more about IEX Cloud, visit https://iexcloud.io.
 
-To be able to use iexdownload, there are several key environment variables that
+To be able to use iexcloud, there are several key environment variables that
 need to be configured:
 
 * IEX_TOKEN: Your IEX Cloud Api Token

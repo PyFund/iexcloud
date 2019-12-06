@@ -2,7 +2,7 @@
 .idea
 
 # Compilation cache files
-iexdownload.egg-info
+iexcloud.egg-info
 dist
 versioneer.pyc
 __pycache__

@@ -2,13 +2,13 @@ from setuptools import setup
 
 import versioneer
 
-DISTNAME = 'iexdownload'
-DESCRIPTION = "iexdownload retrieves and archives iexcloud data in databases"
+DISTNAME = 'iexcloud'
+DESCRIPTION = "iexcloud retrieves and archives iexcloud data in databases"
 MAINTAINER = 'Shawn Lin'
 MAINTAINER_EMAIL = 'shawnlin.xl@gmail.com'
 AUTHOR = 'Shawn Lin'
 AUTHOR_EMAIL = 'shawnlin.xl@gmail.com'
-URL = "https://github.com/shawnlinxl/iexdownload"
+URL = "https://github.com/shawnlinxl/iexcloud"
 LICENSE = "GPLv3"
 
 classifiers = ['Development Status :: 1 - Planning',
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         classifiers=classifiers,
         install_requires=install_reqs,
         url=URL,
-        packages=['iexdownload'],
+        packages=['iexcloud'],
         version=versioneer.get_version(),
         cmdclass=versioneer.get_cmdclass(),
     )

@@ -1,6 +1,6 @@
 import requests
 
-from iexdownload.constants import *
+from iexcloud.constants import *
 
 
 def get_historical_price(symbol: str, range: str):
