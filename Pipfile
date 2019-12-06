@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 versioneer = ">=0.18"
+twine = "*"
 
 [packages]
 
