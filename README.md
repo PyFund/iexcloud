@@ -18,17 +18,11 @@ pip install iexcloud
 
 ### Dependencies
 
-The package should be used with conjunction with a MySQL database and an IEX
+The package requires active subscription to IEX
 Cloud. To learn more about IEX Cloud, visit https://iexcloud.io.
 
-To be able to use iexcloud, there are several key environment variables that
-need to be configured:
-
-* IEX_TOKEN: Your IEX Cloud Api Token
-* MYSQL_USER: Your MySQL username
-* MYSQL_PASS: Your MySQL password
-* MYSQL_HOST: Your MySQL hostname
-* MYSQL_PORT: Your MySQL port number
+To be able to use iexcloud, there environment variable `IEX_TOKEN`
+needs to be configured:
 
 #### Setting your environment variables
 
@@ -40,10 +34,6 @@ need to be configured:
 
      ```
      export IEX_TOKEN="Your IEX Cloud Api Token"
-     export MYSQL_USER="Your MySQL username"
-     export MYSQL_PASS="Your MySQL password"
-     export MYSQL_HOST="Your MySQL hostname"
-     export MYSQL_PORT="Your MySQL port number"
      ```
      
    * Save the .bash_profile file and Quit (Command + Q) Text Edit.
@@ -59,10 +49,6 @@ need to be configured:
    
      ```
      IEX_TOKEN="Your IEX Cloud Api Token"
-     MYSQL_USER="Your MySQL username"
-     MYSQL_PASS="Your MySQL password"
-     MYSQL_HOST="Your MySQL hostname"
-     MYSQL_PORT="Your MySQL port number"
      ```  
    * Press `esc` to quit edit mode.
    * Enter `:wq` to save and exit.
