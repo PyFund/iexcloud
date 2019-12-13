@@ -81,7 +81,7 @@ class Stock(object):
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/earnings/{last}?"
         response = requests.get(api_url, params={'token': IEX_TOKEN})
-        output =  self._create_output(response)
+        output = self._create_output(response)
 
         self.earning = output
 
@@ -97,7 +97,7 @@ class Stock(object):
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/logo?"
         response = requests.get(api_url, params={'token': IEX_TOKEN})
-        output =  self._create_output(response)
+        output = self._create_output(response)
 
         self.logo = output
 
@@ -122,7 +122,6 @@ class Stock(object):
         self.news = output
 
         return output
-
 
     def get_peer(self):
         """https://iexcloud.io/docs/api/#peer-groups
@@ -218,8 +217,3 @@ class Stock(object):
         self.split = output
 
         return output
-
-
-test = Stock("AAPL", output="pandas")
-print(test.get_logo())
-print(test.logo)
