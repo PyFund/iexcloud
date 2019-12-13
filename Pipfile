@@ -9,6 +9,7 @@ twine = "*"
 
 [packages]
 requests = ">=2.22.0"
+pandas = "*"
 
 [requires]
 python_version = "3.7"
