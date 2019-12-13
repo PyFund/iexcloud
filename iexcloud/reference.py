@@ -1,3 +1,4 @@
+from typing import List
 import requests
 
 from iexcloud.constants import IEX_CLOUD, IEX_TOKEN
@@ -7,10 +8,10 @@ class Reference(object):
 
     def __init__(self):
 
-        self.msg_limit = self.get_msg_limit()
-        self.msg_used = self.get_msg_used()
-        self.msg_balance = self.msg_limit - self.msg_used
-        self.symbols = self.get_symbols()
+        self.msg_limit: int = self.get_msg_limit()
+        self.msg_used: int = self.get_msg_used()
+        self.msg_balance: int = self.msg_limit - self.msg_used
+        self.symbols: List[str] = self.get_symbols()
 
     @staticmethod
     def get_msg_limit() -> int:
