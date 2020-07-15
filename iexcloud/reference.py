@@ -5,7 +5,6 @@ from iexcloud.constants import IEX_CLOUD, IEX_TOKEN
 
 
 class Reference(object):
-
     def __init__(self):
 
         self.msg_limit: int = self.get_msg_limit()
@@ -29,7 +28,7 @@ class Reference(object):
         response = requests.get(api_url)
 
         if response:
-            return response.json()['messageLimit']
+            return response.json()["messageLimit"]
 
     @staticmethod
     def get_msg_used() -> int:
@@ -47,7 +46,7 @@ class Reference(object):
         response = requests.get(api_url)
 
         if response:
-            return response.json()['messagesUsed']
+            return response.json()["messagesUsed"]
 
     @staticmethod
     def get_symbols():
@@ -56,7 +55,7 @@ class Reference(object):
         response = requests.get(api_url)
 
         if response:
-            return [symbol['symbol'] for symbol in response.json()]
+            return [symbol["symbol"] for symbol in response.json()]
 
     def update_msg_limit(self):
 
