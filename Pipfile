@@ -4,12 +4,18 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-versioneer = ">=0.18"
+versioneer = "*"
+black = "==19.10b0"
+flake8 = "*"
+sphinx = "*"
+pydata-sphinx-theme = "*"
 twine = "*"
+coverage = "*"
+pytest-cov = "*"
 
 [packages]
-requests = ">=2.22.0"
 pandas = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"

@@ -23,7 +23,7 @@ class Stock(object):
         self.sentiment = None
         self.split = None
 
-    def _response_text_to_pd(self, response_text: str):
+    def _response_text_to_pd(self, response_text: str, response_attr):
 
         response_text = response_text.replace("'", '"')
 
@@ -173,27 +173,6 @@ class Stock(object):
         output = self._create_output(response)
 
         self.profile = output
-
-        return output
-
-    def get_sentiment(self, date):
-        """https://iexcloud.io/docs/api/#social-sentiment
-
-        Parameters
-        ----------
-        date
-
-        Returns
-        -------
-
-        """
-
-        api_url = f"{IEX_CLOUD}/stock/{self.symbol}/sentiment/mute/{date}"
-        response = requests.get(api_url, params={'token': IEX_TOKEN})
-
-        output = self._create_output(response)
-
-        self.sentiment = output
 
         return output
 

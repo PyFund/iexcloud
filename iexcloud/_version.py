@@ -41,9 +41,9 @@ def get_config():
     cfg = VersioneerConfig()
     cfg.VCS = "git"
     cfg.style = "pep440"
-    cfg.tag_prefix = "None"
-    cfg.parentdir_prefix = "None"
-    cfg.versionfile_source = "iexdownload/_version.py"
+    cfg.tag_prefix = "v"
+    cfg.parentdir_prefix = "iexcloud-"
+    cfg.versionfile_source = "iexcloud/_version.py"
     cfg.verbose = False
     return cfg
 
