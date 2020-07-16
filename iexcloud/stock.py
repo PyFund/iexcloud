@@ -4,7 +4,8 @@ import pandas as pd
 import requests
 from requests import Response
 
-from iexcloud.constants import IEX_CLOUD, IEX_TOKEN
+from iexcloud.constants import IEX_CLOUD
+from iexcloud.config import get_token
 
 
 class Stock(object):
@@ -22,6 +23,17 @@ class Stock(object):
         self.sentiment = None
         self.split = None
 
+    def _create_output(self, response: Response):
+
+        if response:
+            cases = {
+                "json": response.text,
+                "pandas": self._response_text_to_pd(response.text),
+            }
+            return cases[self.output]
+        else:
+            raise response.raise_for_status()
+
     def _response_text_to_pd(self, response_text: str, response_attr):
 
         response_text = response_text.replace("'", '"')
@@ -34,17 +46,6 @@ class Stock(object):
         df["retrieved"] = time.time()
 
         return df
-
-    def _create_output(self, response: Response):
-
-        if response:
-            cases = {
-                "json": response.text,
-                "pandas": self._response_text_to_pd(response.text),
-            }
-            return cases[self.output]
-        else:
-            raise response.raise_for_status()
 
     def get_dividend(self, time_range: str):
         """https://iexcloud.io/docs/api/#dividends-basic
@@ -59,7 +60,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/dividends/{time_range}?"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.dividend = output
@@ -79,7 +80,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/earnings/{last}?"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.earning = output
@@ -95,7 +96,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/logo?"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.logo = output
@@ -115,7 +116,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/news/last/{last}"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.news = output
@@ -131,7 +132,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/peers"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.peer = output
@@ -152,7 +153,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/chart/{time_range}"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.price = output
@@ -168,7 +169,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/company"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
         output = self._create_output(response)
 
         self.profile = output
@@ -188,7 +189,7 @@ class Stock(object):
         """
 
         api_url = f"{IEX_CLOUD}/stock/{self.symbol}/splits/{time_range}"
-        response = requests.get(api_url, params={"token": IEX_TOKEN})
+        response = requests.get(api_url, params={"token": get_token()})
 
         output = self._create_output(response)
 

@@ -1,4 +1,3 @@
 {
-  "python.formatting.provider": "black",
-  "python.pythonPath": "/root/.local/share/virtualenvs/iexcloud-EhySVmuP/bin/python"
+  "python.formatting.provider": "black"
 }

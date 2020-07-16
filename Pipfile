@@ -12,10 +12,11 @@ pydata-sphinx-theme = "*"
 twine = "*"
 coverage = "*"
 pytest-cov = "*"
+iexcloud = {editable = true, path = "."}
 
 [packages]
 pandas = "*"
 requests = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
