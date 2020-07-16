@@ -26,29 +26,8 @@ needs to be configured:
 
 #### Setting your environment variables
 
-1. OS X
+```python
+import iexcloud
 
-   * Open Terminal
-   * Run `touch ~/.bash_profile; open ~/.bash_profile`
-   * In TextEdit, add
-
-     ```
-     export IEX_TOKEN="Your IEX Cloud Api Token"
-     ```
-     
-   * Save the .bash_profile file and Quit (Command + Q) Text Edit.
-   * Run source `~/.bash_profile`
-
-2. Linux
-
-   * Open Terminal
-   * Run `sudo -H vim /etc/environment`
-   * Enter password
-   * In terminal, press `i` to enter insert mode
-   * In terminal, add
-   
-     ```
-     IEX_TOKEN="Your IEX Cloud Api Token"
-     ```  
-   * Press `esc` to quit edit mode.
-   * Enter `:wq` to save and exit.
+iexcloud.set_token({YOUR_IEX_CLOUD_TOKEN})
+```
