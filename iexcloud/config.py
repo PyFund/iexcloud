@@ -1,4 +1,5 @@
 import os
+from iexcloud.constants import IEX_CLOUD, IEX_CLOUD_TEST
 
 
 def set_token(token: str):
@@ -26,9 +27,9 @@ def set_mode(mode: str = "PRODUCTION"):
 
     Args:
         mode: {"PRODUCTION", "TEST"}. The production mode. Defaults to "PRODUCTION".
-    
+
     Raises:
-        ValueError: when mode supplied is not one of PRODUCTION or TEST 
+        ValueError: when mode supplied is not one of PRODUCTION or TEST
     """
 
     if mode not in ["PRODUCTION", "TEST"]:
@@ -48,13 +49,26 @@ def get_token() -> str:
         str: IEX API Token
     """
 
-    if "IEX_MODE" in os.environ and "IEX_MODE" in os.environ:
+    if "IEX_MODE" in os.environ and os.environ["IEX_MODE"] == "TEST":
         if "IEX_TEST_TOKEN" in os.environ:
             return os.environ["IEX_TEST_TOKEN"]
         else:
-            raise EnvironmentError("IEX Test Token is not set.")
+            raise OSError("IEX Test Token is not set.")
     else:
         if "IEX_TOKEN" in os.environ:
             return os.environ["IEX_TOKEN"]
         else:
-            raise EnvironmentError("IEX Token is not set.")
+            raise OSError("IEX Token is not set.")
+
+
+def get_url() -> str:
+    """Get IEX API URL
+
+    Returns:
+        str: URL of IEX API
+    """
+
+    if "IEX_MODE" in os.environ and os.environ["IEX_MODE"] == "TEST":
+        return IEX_CLOUD_TEST
+    else:
+        return IEX_CLOUD
